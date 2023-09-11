@@ -1,7 +1,19 @@
 .calc__wrapper {
-  display: grid;
-  grid-template-columns: repeat(4, 8rem);
-  gap: 1rem;
+  flex: 0 1 auto;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 
   padding: 1rem;
+}
+
+.calc__buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 1rem;
+
+  width: 100%;
 }

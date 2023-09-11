@@ -1,11 +1,17 @@
 @import "../../styles/variables";
 
-.button {
+.button__wrapper {
+  position: relative;
+
+  flex: 0 0 calc(25% - 1rem);
   display: flex;
   justify-content: center;
   align-items: center;
 
-  height: 8rem;
+  height: 100%;
+  width: 100%;
+
+  padding-bottom: calc(25% - 1rem);
 
   color: $white;
   background-color: $lightBlack;
@@ -19,13 +25,15 @@
 
   cursor: pointer;
 
+  overflow: hidden;
+
   &:hover,
   &:focus {
     background-color: lighten($lightBlack, 7%)
   }
 
   &--ac_mod {
-    grid-column: 1/4;
+    flex: 0 0  calc(75% - 1rem);
 
     background-color: $purple;
 
@@ -56,8 +64,24 @@
   }
 
   &--zero_mod {
-    grid-column: 1/3;
+    flex: 0 0 calc(50% - 1rem);
 
     border-radius: 6rem;
   }
+
+  @media (max-width: 768px) {
+    font-size: 3.4rem;
+  }
+}
+
+.button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: inherit;
+  font-size: inherit;
+  color: inherit;
 }

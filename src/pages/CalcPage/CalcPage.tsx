@@ -6,8 +6,10 @@ import "./CalcPage.scss";
 const CalcPage: React.FC = () => {
   return (
     <section className="calc">
-      <CalcScreen />
-      <CalcButtonsBox />
+      <div className="calc__body">
+        <CalcScreen />
+        <CalcButtonsBox />
+      </div>
     </section>
   );
 };

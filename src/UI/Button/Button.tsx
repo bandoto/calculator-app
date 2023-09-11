@@ -11,13 +11,13 @@ interface IButtonProps {
 }
 
 const className: Record<string, string> = {
-  [BUTTONS.AC]: "button--ac_mod",
-  [BUTTONS.EQUALS]: "button--equals_mod",
-  [BUTTONS.MULTIPLICATION]: "button--operation_mod",
-  [BUTTONS.SUBTRACTION]: "button--operation_mod",
-  [BUTTONS.ADDITION]: "button--operation_mod",
-  [BUTTONS.DIVISION]: "button--operation_mod",
-  [BUTTONS.ZERO]: "button--zero_mod",
+  [BUTTONS.AC]: "button__wrapper--ac_mod",
+  [BUTTONS.EQUALS]: "button__wrapper--equals_mod",
+  [BUTTONS.MULTIPLICATION]: "button__wrapper--operation_mod",
+  [BUTTONS.SUBTRACTION]: "button__wrapper--operation_mod",
+  [BUTTONS.ADDITION]: "button__wrapper--operation_mod",
+  [BUTTONS.DIVISION]: "button__wrapper--operation_mod",
+  [BUTTONS.ZERO]: "button__wrapper--zero_mod",
 };
 
 const Button: React.FC<IButtonProps> = ({ value, onClick, children }) => {
@@ -26,9 +26,9 @@ const Button: React.FC<IButtonProps> = ({ value, onClick, children }) => {
   }, []);
 
   return (
-    <button className={`button ${getStyleName(value)}`} onClick={onClick}>
-      {children || value}
-    </button>
+    <div className={`button__wrapper ${getStyleName(value)}`} onClick={onClick}>
+      <button className="button">{children || value}</button>
+    </div>
   );
 };
 

@@ -2,17 +2,18 @@
 @import "./variables.scss";
 
 html {
-  @media(min-width: 1920px) {
-    font-size: 16px;
-  }
-
-  @media(min-width: 768px) and (max-width: 1919px) {
-    font-size: 10px;
-  }
-
-  @media(max-width: 767px) {
-    font-size: 7px;
-  }
+  //@media(min-width: 1920px) {
+  //  font-size: 16px;
+  //}
+  //
+  //@media(min-width: 768px) and (max-width: 1919px) {
+  //  font-size: 10px;
+  //}
+  //
+  //@media(max-width: 767px) {
+  //  font-size: 7px;
+  //}
+  font-size: 10px;
 }
 
 body {
@@ -35,5 +36,9 @@ body {
   justify-content: center;
   align-items: center;
 
-  min-height: 100vh;
+  height: 100vh;
+}
+
+section {
+  height: 100%;
 }

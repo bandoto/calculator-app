@@ -7,9 +7,11 @@ import "./CalcButtonsBox.scss";
 export const CalcButtonsBox: React.FC = () => {
   return (
     <div className="calc__wrapper">
-      {CALC_BUTTONS.flat().map((btn) => (
-        <CalcButton value={btn} key={btn} />
-      ))}
+      <div className="calc__buttons">
+        {CALC_BUTTONS.flat().map((btn) => (
+          <CalcButton value={btn} key={btn} />
+        ))}
+      </div>
     </div>
   );
 };
