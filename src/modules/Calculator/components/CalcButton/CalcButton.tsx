@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect } from "react";
 import Button from "../../../../UI/Button/Button";
 import { BUTTONS } from "../../../../utils/constants";
-import { useAppDispatch } from "../../../../hooks/redux-hooks";
+import { useAppDispatch, useAppSelector } from "../../../../hooks/redux-hooks";
 import {
   clickAC,
   clickComma,
@@ -13,20 +13,21 @@ import { IDot, IDigit, IOperator } from "../../../../utils/types";
 
 interface ICalcButtonProps {
   value: IDigit | IOperator;
-  state: any;
 }
 
-export const CalcButton: React.FC<ICalcButtonProps> = ({ value, state }) => {
-  console.log("rerender CalcButton");
+export const CalcButton: React.FC<ICalcButtonProps> = ({ value }) => {
   const dispatch = useAppDispatch();
+  const calc = useAppSelector((state) => state.calc);
+
+  const { currentNumber } = calc;
 
   const handleNumberClick = useCallback(() => {
     if (typeof value === "number" && value >= 0 && value <= 9) {
-      const numberValue = Number(state.currentNumber.toString() + value);
+      const numberValue = Number(currentNumber.toString() + value);
 
       dispatch(clickNumber(numberValue.toString()));
     }
-  }, [value, state.currentNumber, dispatch]);
+  }, [value, currentNumber, dispatch]);
 
   const handleBtnClick = useCallback(() => {
     switch (value) {

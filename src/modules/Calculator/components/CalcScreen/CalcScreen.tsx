@@ -7,7 +7,6 @@ import { changeDotToComma } from "../../libs/changeDotToComma";
 import "./CalcScreen.scss";
 
 export const CalcScreen: React.FC = () => {
-  console.log("rerender CalcScreen");
   const [showResult, setShowResult] = useState<boolean>(false);
 
   const dispatch = useAppDispatch();
