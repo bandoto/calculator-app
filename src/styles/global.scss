@@ -1,0 +1,39 @@
+@import './reset.scss';
+@import "./variables.scss";
+
+html {
+  @media(min-width: 1920px) {
+    font-size: 16px;
+  }
+
+  @media(min-width: 768px) and (max-width: 1919px) {
+    font-size: 10px;
+  }
+
+  @media(max-width: 767px) {
+    font-size: 7px;
+  }
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  font-size: 1.8rem;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+
+  overflow: hidden;
+}
+
+.main {
+  flex: 1 1 auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100vh;
+}

@@ -1,0 +1,7 @@
+.calc__wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 8rem);
+  gap: 1rem;
+
+  padding: 1rem;
+}
