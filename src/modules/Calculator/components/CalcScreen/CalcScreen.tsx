@@ -8,7 +8,6 @@ import "./CalcScreen.scss";
 
 export const CalcScreen: React.FC = () => {
   const [showResult, setShowResult] = useState<boolean>(false);
-
   const dispatch = useAppDispatch();
   const calc = useAppSelector((state) => state.calc);
 
@@ -42,7 +41,7 @@ export const CalcScreen: React.FC = () => {
         textRefResult.current.style.fontSize = "100%";
       }
     }
-  }, [firstNumber, secondNumber, operation, result]);
+  }, [firstNumber, secondNumber, operation, result, showResult]);
 
   const formattedFirstNumber =
     firstNumber !== null

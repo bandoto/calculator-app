@@ -89,7 +89,7 @@ export const calcSlice = createSlice({
         const operation = state.operation as IOperator;
         const result = mathOperations[operation](a, b);
 
-        state.result = Number(result.toFixed(10));
+        state.result = Number(result.toFixed(5));
       }
     },
     clickAC: (state) => {
